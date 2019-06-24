@@ -21,6 +21,15 @@ ActiveRecord::Schema.define(version: 2019_06_24_091729) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "papers", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "content"
+    t.datetime "archived_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "s3_files", force: :cascade do |t|
     t.string "bucket_name"
     t.string "file_name"
