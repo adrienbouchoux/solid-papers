@@ -6,6 +6,7 @@ class Book < ApplicationRecord
   end
 
   def pdf_url
+    # Oops... it breaks the rubocop's ABC size rule... How could we do better?
     case editor
     when 'seuil'
       Seuil.get_book(isbn: isbn).get_ebook_url(format: :pdf, expires_in: 50.minutes.from_now)

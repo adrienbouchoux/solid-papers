@@ -7,7 +7,7 @@ module Flammarion
       new(isbn: isbn)
     end
 
-    def initialize(isbn: isbn)
+    def initialize(isbn:)
       @isbn = isbn
     end
 
