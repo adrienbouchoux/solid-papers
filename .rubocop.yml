@@ -1,0 +1,56 @@
+require: rubocop-performance
+
+AllCops:
+  TargetRubyVersion: 2.5
+  Exclude:
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
+    - 'db/**/*'
+    - 'tmp/**/*'
+    - 'vendor/**/*'
+    - 'bin/**/*'
+    - 'proto/**/*'
+Performance:
+  Exclude:
+    - '**/test/**/*'
+Rails:
+  Enabled: true
+
+Layout/DotPosition:
+  EnforcedStyle: trailing
+Layout/EndAlignment:
+  # EnforcedStyleAlignWith: keyword # default
+  AutoCorrect: true
+Layout/SpaceInsideBlockBraces:
+  # Use `foo { bar }` not `foo {bar}`.
+  EnforcedStyleForEmptyBraces: space
+Layout/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: 'no_space'
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: false
+
+Metrics/BlockLength:
+  Exclude:
+    - 'spec/**/*_spec.rb'
+    - 'spec/**/*_desc.rb'
+Metrics/MethodLength:
+  Max: 15
+Metrics/LineLength:
+  Max: 100
+
+Style/BlockComments:
+  Exclude:
+    - spec/spec_helper.rb
+Style/BracesAroundHashParameters:
+  # Do not use braces for hash literals when they are the last
+  # argument of a method call.
+  EnforcedStyle: context_dependent
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false
+Style/RedundantReturn:
+  AllowMultipleReturnValues: true
+Style/Semicolon:
+  AllowAsExpressionSeparator: true
