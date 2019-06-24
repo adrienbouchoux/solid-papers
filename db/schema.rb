@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 2019_06_24_091729) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.string "author"
+    t.string "editor"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "papers", force: :cascade do |t|
     t.string "title"
     t.string "author"
